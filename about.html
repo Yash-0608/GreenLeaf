@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about GreenLeaf Nursery, our mission to bring sustainable greenery to Indian homes, and why we are the best choice for your garden.">
+    <title>About Us | GreenLeaf Nursery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-leaf"><ion-icon name="leaf-outline"></ion-icon></span>
+                GreenLeaf<span>Nursery</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="auth.html" class="cart-icon-btn" title="Account">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+                <button class="cart-icon-btn">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="nav-cta">
+                    <a href="products.html" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="cart-total-value">₹0</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+        <header class="page-header">
+            <div class="container">
+                <h1>About <span>Our Story</span></h1>
+                <p>Nurturing nature since 2010, one plant at a time.</p>
+            </div>
+        </header>
+
+        <section class="about-detailed">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000&auto=format&fit=crop" alt="Our nursery greenhouse">
+                    </div>
+                    <div class="about-text">
+                        <span class="section-subtitle">Our Mission</span>
+                        <h2>Greenery for Every Home</h2>
+                        <p>At GreenLeaf Nursery, we believe that every space, no matter how small, deserves a touch of nature. Our journey started in a small backyard with a handful of saplings and a vision to make sustainable gardening accessible to everyone in India.</p>
+                        <p>We specialize in plants that are not just beautiful but are specifically chosen to thrive in the diverse Indian climate. From the humid coastal regions to the dry heat of the plains, we have a plant for every corner.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Us?</h2>
+                    <p>We go beyond just selling plants; we offer a lifestyle of sustainability and health.</p>
+                </div>
+                <div class="why-us-grid-cards">
+                    <div class="why-card">
+                        <div class="why-icon"><ion-icon name="checkmark-done-outline"></ion-icon></div>
+                        <h3>Quality Assured</h3>
+                        <p>Every plant is hand-picked and checked for health before it reaches you.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><ion-icon name="leaf-outline"></ion-icon></div>
+                        <h3>Eco-Friendly</h3>
+                        <p>We use sustainable potting mixes and eco-friendly packaging for all our plants.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><ion-icon name="school-outline"></ion-icon></div>
+                        <h3>Expert Guidance</h3>
+                        <p>New to gardening? Our experts provide lifetime care support for your green friends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GreenLeaf<span>Nursery</span></a>
+                    <p>Bringing sustainable greenery to every Indian home since 2010.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenLeaf Nursery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

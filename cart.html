@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | GreenLeaf Nursery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-leaf"><ion-icon name="leaf-outline"></ion-icon></span>
+                GreenLeaf<span>Nursery</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="auth.html" class="cart-icon-btn" title="Account">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+                <button class="cart-icon-btn">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="checkout-page">
+        <div class="container">
+            <header class="page-header">
+                <h1>Order <span>Summary</span></h1>
+                <p>Review your plants before we prepare them for delivery.</p>
+            </header>
+
+            <div class="checkout-grid">
+                <div class="checkout-items-section">
+                    <div class="checkout-items-list" id="checkout-items">
+                        <!-- Items will be injected here -->
+                    </div>
+                </div>
+
+                <div class="checkout-summary-section">
+                    <div class="summary-card">
+                        <h3>Payment Details</h3>
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹0</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>GST (18%)</span>
+                            <span id="gst">₹0</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Delivery</span>
+                            <span class="free">FREE</span>
+                        </div>
+                        <hr>
+                        <div class="summary-line total">
+                            <span>Total Amount</span>
+                            <span id="total-amount">₹0</span>
+                        </div>
+                        <button class="btn btn-primary checkout-final-btn" id="place-order-btn">Place Order</button>
+                        <p class="delivery-note"><ion-icon name="time-outline"></ion-icon> Delivery in 1 hour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="order-overlay" id="order-overlay">
+        <div class="success-modal">
+            <div class="success-icon"><ion-icon name="checkmark-circle"></ion-icon></div>
+            <h2>Order Confirmed!</h2>
+            <p>Your beautiful plants are being prepared. They will be delivered in <strong>1 hour</strong>.</p>
+            <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GreenLeaf<span>Nursery</span></a>
+                    <p>Bringing sustainable greenery to every Indian home since 2010.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenLeaf Nursery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Specific logic for Checkout Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutItems = document.getElementById('checkout-items');
+            const subtotalEl = document.getElementById('subtotal');
+            const gstEl = document.getElementById('gst');
+            const totalEl = document.getElementById('total-amount');
+            const placeOrderBtn = document.getElementById('place-order-btn');
+            const orderOverlay = document.getElementById('order-overlay');
+
+            const renderCheckout = () => {
+                const cart = JSON.parse(localStorage.getItem('greenleaf-cart')) || [];
+                const price = 99;
+
+                if (cart.length === 0) {
+                    checkoutItems.innerHTML = '<div class="empty-state"><h3>Your cart is empty</h3><a href="products.html" class="btn btn-secondary">Browse Plants</a></div>';
+                    placeOrderBtn.disabled = true;
+                    return;
+                }
+
+                checkoutItems.innerHTML = cart.map((item, index) => `
+                    <div class="checkout-item">
+                        <img src="${item.img}" alt="${item.name}">
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>Premium Healthy Plant</p>
+                            <div class="item-qty-price">
+                                <span>Qty: ${item.qty}</span>
+                                <strong>₹${item.qty * price}</strong>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                const subtotal = cart.reduce((sum, item) => sum + (item.qty * price), 0);
+                const gst = Math.round(subtotal * 0.18);
+                const total = subtotal + gst;
+
+                subtotalEl.textContent = `₹${subtotal}`;
+                gstEl.textContent = `₹${gst}`;
+                totalEl.textContent = `₹${total}`;
+            };
+
+            placeOrderBtn.addEventListener('click', () => {
+                // Check if user is logged in
+                const savedUser = JSON.parse(localStorage.getItem('greenleaf-user'));
+                
+                if (!savedUser) {
+                    alert('Please register or login to place your order.');
+                    window.location.href = 'auth.html';
+                    return;
+                }
+
+                const cart = JSON.parse(localStorage.getItem('greenleaf-cart')) || [];
+                const orders = JSON.parse(localStorage.getItem('greenleaf-orders')) || [];
+                
+                const newOrder = {
+                    id: 'ORD' + Date.now(),
+                    date: new Date().toISOString(),
+                    items: cart,
+                    total: totalEl.textContent,
+                    gst: gstEl.textContent,
+                    user: savedUser.email // Link order to user
+                };
+
+                orders.push(newOrder);
+                localStorage.setItem('greenleaf-orders', JSON.stringify(orders));
+                localStorage.setItem('greenleaf-cart', JSON.stringify([])); // Clear cart
+
+                orderOverlay.classList.add('active');
+            });
+
+            renderCheckout();
+        });
+    </script>
+</body>
+</html>

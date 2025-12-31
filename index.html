@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GreenLeaf Nursery offers a wide variety of healthy indoor, outdoor, medicinal, flowering, and decorative plants suitable for Indian climate conditions.">
+    <meta name="keywords" content="Plant Nursery, Garden Store, Indoor Plants India, Outdoor Plants, Medicinal Plants, Air Purifying Plants">
+    <meta name="author" content="GreenLeaf Nursery">
+    <title>GreenLeaf Nursery | Bring Nature Home</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-leaf"><ion-icon name="leaf-outline"></ion-icon></span>
+                GreenLeaf<span>Nursery</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+                <a href="auth.html" class="cart-icon-btn" title="Account">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+                <button class="cart-icon-btn">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="nav-cta">
+                    <a href="products.html" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="cart-total-value">₹0</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">Eco-friendly & Sustainable</span>
+                    <h1>Bring Nature <span>Home</span></h1>
+                    <p>Discover a curated collection of healthy plants for homes, offices, and gardens. Expertly grown to thrive in our climate.</p>
+                    <div class="hero-btns">
+                        <a href="products.html" class="btn btn-primary">Browse Plants</a>
+                        <a href="about.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=1000&auto=format&fit=crop" alt="Lush green plants in a modern room">
+                        <div class="floating-card">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                            <span>100% Healthy Plants</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+        </section>
+
+        <!-- Categories Preview -->
+        <section class="categories bg-white">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Our Collection</h2>
+                    <p>From air-purifying indoor plants to vibrant garden blooms.</p>
+                </div>
+                <div class="category-grid">
+                    <a href="products.html?cat=indoor" class="category-card">
+                        <div class="cat-icon"><ion-icon name="home-outline"></ion-icon></div>
+                        <h3>Indoor Plants</h3>
+                        <p>Purifying and decorative</p>
+                    </a>
+                    <a href="products.html?cat=outdoor" class="category-card">
+                        <div class="cat-icon"><ion-icon name="sunny-outline"></ion-icon></div>
+                        <h3>Outdoor Plants</h3>
+                        <p>Hardy garden favorites</p>
+                    </a>
+                    <a href="products.html?cat=flowering" class="category-card">
+                        <div class="cat-icon"><ion-icon name="rose-outline"></ion-icon></div>
+                        <h3>Flowering Plants</h3>
+                        <p>Vibrant blooms</p>
+                    </a>
+                    <a href="products.html?cat=medicinal" class="category-card">
+                        <div class="cat-icon"><ion-icon name="medkit-outline"></ion-icon></div>
+                        <h3>Medicinal Plants</h3>
+                        <p>Natural wellness</p>
+                    </a>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="products.html" class="btn btn-secondary">View All Categories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Brief -->
+        <section class="about-brief">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000&auto=format&fit=crop" alt="Garden store nursery">
+                    </div>
+                    <div class="about-text">
+                        <span class="section-subtitle">Who We Are</span>
+                        <h2>About Our Nursery</h2>
+                        <p>We sell a wide range of plants that are easy to maintain and well-suited for Indian weather. Our plants are carefully grown to ensure freshness, longevity, and beauty.</p>
+                        <a href="about.html" class="btn btn-secondary">Read Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="products-preview bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Plants</h2>
+                    <p>Our most loved and hardy selections.</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1631502900760-478546197fce?q=80&w=800&auto=format&fit=crop" alt="Money Plant">
+                        </div>
+                        <div class="product-info">
+                            <h3>Money Plant</h3>
+                            <p>Low maintenance indoor plant known for air purification.</p>
+                            <div class="product-footer">
+                                <span class="price">₹99</span>
+                                <button class="btn-icon btn-add-cart"><ion-icon name="add-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1593482892290-f54927ae1cad?q=80&w=800&auto=format&fit=crop" alt="Snake Plant">
+                        </div>
+                        <div class="product-info">
+                            <h3>Snake Plant</h3>
+                            <p>Hardy indoor plant that improves air quality.</p>
+                            <div class="product-footer">
+                                <span class="price">₹99</span>
+                                <button class="btn-icon btn-add-cart"><ion-icon name="add-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1621274149023-e18e385202ed?q=80&w=800&auto=format&fit=crop" alt="Tulsi">
+                        </div>
+                        <div class="product-info">
+                            <h3>Tulsi</h3>
+                            <p>Sacred medicinal plant for every Indian home.</p>
+                            <div class="product-footer">
+                                <span class="price">₹99</span>
+                                <button class="btn-icon btn-add-cart"><ion-icon name="add-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2>Ready to Start Your Garden?</h2>
+                <p>Browse our collection of premium plants today.</p>
+                <a href="products.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GreenLeaf<span>Nursery</span></a>
+                    <p>Bringing sustainable greenery to every Indian home since 2010.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenLeaf Nursery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
